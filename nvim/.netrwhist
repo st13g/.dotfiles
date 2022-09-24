@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/st13g/.config'
+let g:netrw_dirhist_3='/home/st13g/.config/mpv'
+let g:netrw_dirhist_2='/home/st13g/.config'
+let g:netrw_dirhist_1='/home/st13g/.config/neofetch'
+let g:netrw_dirhist_0='/home/st13g/.config'
+let g:netrw_dirhist_9='/home/st13g'
+let g:netrw_dirhist_8='/home/st13g/spanish'
+let g:netrw_dirhist_7='/home/st13g'
+let g:netrw_dirhist_6='/home'
+let g:netrw_dirhist_5='/home/st13g'
