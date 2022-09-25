@@ -17,7 +17,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
-
+set showmode
+set autoindent
 
 let g:netrw_winsize = 20
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
