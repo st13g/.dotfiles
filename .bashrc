@@ -136,3 +136,5 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 export EDITOR="nvim"
 
+
+alias pass='< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c12'
