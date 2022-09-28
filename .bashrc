@@ -138,3 +138,5 @@ export EDITOR="nvim"
 
 
 alias pass='< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c12'
+alias vim='nvim'
+
