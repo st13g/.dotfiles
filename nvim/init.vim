@@ -1,5 +1,6 @@
 call plug#begin()
 Plug 'vim-airline/vim-airline'
+Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'vim-scripts/DoxygenToolkit.vim'
