@@ -5,13 +5,14 @@ Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'bfrg/vim-cpp-modern'
+Plug 'junegunn/fzf',{'do': { -> fzf#install() }}
 Plug 'junegunn/fzf'
 call plug#end()
 set relativenumber
+set rtp+=~/.fzf
 set number
 imap jk <Esc>
 colorscheme gruvbox
-let g:gruvbox_contrast = 'hard'
 let g:gruvbox_bold = 1
 highlight Normal ctermbg=black
 set tabstop=4
@@ -21,6 +22,6 @@ set noexpandtab
 set showmode
 set autoindent
 
-let g:netrw_winsize = 20
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
+nnoremap <C-p> :FZF<Cr>
+command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, <bang>0)
