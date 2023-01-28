@@ -19,6 +19,8 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# for remote configuration
+G="tmux new-session -d \; set-window-option -g mode-keys vi \;  bind -r k select-pane -U \; bind -r j select-pane -D \; bind -r h select-pane -L \; bind -r l select-pane -R \; unbind C-b \; set-option -g prefix M-i \; bind-key M-i send-prefix \; attach"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
