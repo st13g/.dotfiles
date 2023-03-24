@@ -1,0 +1,2 @@
+require("crisdel")
+print('helo')
