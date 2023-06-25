@@ -18,7 +18,9 @@ set $term foot
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | rofi -show run | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -53,6 +55,10 @@ bindsym Mod4+m focus output right
 
 bindsym Mod4+comma move workspace to output left
 bindsym Mod4+period move workspace to output right
+
+#screenshot using grim
+
+bindsym Mod4+o exec grim -g "$(slurp)" - | wl-copy
 
 ### Idle configuration
 #
@@ -92,7 +98,8 @@ bindsym Mod4+period move workspace to output right
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+p exec $menu
+    #bindsym $mod+p exec $menu
+    bindsym $mod+p exec rofi -show run
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -219,6 +226,15 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
 #
 # Status Bar:
 #
@@ -235,6 +251,7 @@ bar {
         statusline #ffffff
         background #323232
         inactive_workspace #32323200 #32323200 #5c5c5c
+
     }
 }
 
